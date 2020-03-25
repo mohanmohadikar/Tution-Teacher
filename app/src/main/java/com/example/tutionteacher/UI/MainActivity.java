@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
     TextView user_lat, user_long;
     Button search;
 
-    Double LATTITUDE, LONGITUDE;
+    public static Double LATTITUDE;
+    public static Double LONGITUDE;
 
 
     String[] PERMISSIONS = {
@@ -82,6 +83,9 @@ public class MainActivity extends AppCompatActivity {
                                 if (location == null) {
                                     requestNewLocationData();
                                 } else {
+
+                                    LATTITUDE = location.getLatitude();
+                                    LONGITUDE = location.getLongitude();
 
                                     user_lat.setText("LATTITUDE: "+location.getLatitude()+"");
                                     user_long.setText(("LONGITUDE: "+location.getLongitude()+""));
